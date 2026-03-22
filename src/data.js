@@ -1,0 +1,96 @@
+export const DRINKS = [
+  {
+    id: 'iced-water',
+    name: 'Iced Water',
+    minutes: 5,
+    description: 'Fresh & simple',
+    icon: 'water.svg',
+  },
+  {
+    id: 'espresso',
+    name: 'Espresso Shot',
+    minutes: 10,
+    description: 'Quick & bold',
+    icon: 'espresso.svg',
+  },
+  {
+    id: 'iced-latte',
+    name: 'Iced Latte',
+    minutes: 20,
+    description: 'Cool & focused',
+    icon: 'icedcoffee.svg',
+  },
+  {
+    id: 'matcha',
+    name: 'Matcha Latte',
+    minutes: 30,
+    description: 'Calm & steady',
+    icon: 'matcha.svg',
+  },
+  {
+    id: 'hot-chocolate',
+    name: 'Hot Chocolate',
+    minutes: 45,
+    description: 'Warm & rustic',
+    icon: 'hotchocolate.svg',
+  },
+  {
+    id: 'pour-over',
+    name: 'Pour Over',
+    minutes: 60,
+    description: 'Slow & thoughtful',
+    icon: 'pourover.svg',
+  },
+  {
+    id: 'cold-brew',
+    name: 'Cold Brew',
+    minutes: 90,
+    description: 'Deep & patient',
+    icon: 'coldbrew.svg',
+  },
+]
+
+export const SNACKS = [
+  {
+    id: 'cookie',
+    name: 'Butter Cookie',
+    sound: 'jazz',
+    soundLabel: 'Soft café jazz',
+    icon: 'cookie.svg',
+  },
+  {
+    id: 'croissant',
+    name: 'Croissant',
+    sound: 'rain',
+    soundLabel: 'Rain on a window',
+    icon: 'croissant.svg',
+  },
+  {
+    id: 'mochi',
+    name: 'Mochi',
+    sound: 'lofi',
+    soundLabel: 'Chill lo-fi',
+    icon: 'mochi.svg',
+  },
+  {
+    id: 'rice-cracker',
+    name: 'Rice Cracker',
+    sound: 'campfire',
+    soundLabel: 'Campfire crackling',
+    icon: 'ricecracker.svg',
+  },
+  {
+    id: 'banana-bread',
+    name: 'Banana Bread',
+    sound: 'softfocus',
+    soundLabel: 'Lo-fi for focus',
+    icon: 'bananabread.svg',
+  },
+  {
+    id: 'nothing',
+    name: 'Nothing for me',
+    sound: 'none',
+    soundLabel: 'Silence',
+    icon: 'emptyplate.svg',
+  },
+]
