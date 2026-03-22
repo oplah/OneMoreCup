@@ -59,6 +59,7 @@ export default function App() {
           onDrinkSelect={setSelectedDrink}
           onSnackSelect={setSelectedSnack}
           onOrder={handleOrder}
+          onHome={() => setScreen('landing')}
         />
       )}
       {screen === 'timer' && (

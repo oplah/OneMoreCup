@@ -131,12 +131,23 @@ function SnackItem({ item, selected, onSelect, previewingId, onPreview }) {
 }
 
 // ── Menu screen ──────────────────────────────────────────────────────────────
+function HomeIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z" />
+      <path d="M9 21V12h6v9" />
+    </svg>
+  )
+}
+
+// ── Menu screen ──────────────────────────────────────────────────────────────
 export default function Menu({
   selectedDrink,
   selectedSnack,
   onDrinkSelect,
   onSnackSelect,
   onOrder,
+  onHome,
 }) {
   const canOrder = selectedDrink && selectedSnack
   const [previewingId, setPreviewingId] = useState(null)
@@ -164,6 +175,10 @@ export default function Menu({
 
   return (
     <div className="menu-screen">
+      <button className="menu-home-btn" onClick={onHome} aria-label="Back to home">
+        <HomeIcon />
+      </button>
+
       <header className="menu-header">
         <h1 className="menu-title">The Menu</h1>
         <p className="menu-tagline">Pick a drink and a snack</p>

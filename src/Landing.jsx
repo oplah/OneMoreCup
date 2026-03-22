@@ -3,7 +3,7 @@ import { CoffeeMachineSvg } from './CoffeeMachineSvg'
 export default function Landing({ onEnter }) {
   return (
     <div className="landing">
-      <h1 className="landing-title">One More Cup</h1>
+      <h1 className="landing-title">Still Brewing</h1>
       <p className="landing-subtitle">hand-crafted focus sessions</p>
 
       <div
