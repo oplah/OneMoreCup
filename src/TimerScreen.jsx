@@ -137,7 +137,7 @@ export default function TimerScreen({ drink, snack, onComplete, onCancel, play, 
       <div className="receipt-card">
         <div className="receipt-header">Order Ticket</div>
         <div className="receipt-divider">{'─'.repeat(26)}</div>
-        <div className="receipt-title">L E T S B R E W</div>
+        <div className="receipt-title">ONE MORE CUP</div>
         <div className="receipt-divider">{'─'.repeat(26)}</div>
 
         <div className="receipt-drink">
