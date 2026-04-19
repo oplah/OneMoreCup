@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useTimer, formatTime } from './useTimer'
+import { getAudioContext } from './useAudio'
 
 function PauseIcon() {
   return (
@@ -53,7 +54,9 @@ function SteamPuff({ style }) {
 
 function playCompleteChime() {
   try {
-    const ctx = new (window.AudioContext || window.webkitAudioContext)()
+    // Reuse the shared context primed during "place order" click (never blocked on mobile)
+    const ctx = getAudioContext() || new (window.AudioContext || window.webkitAudioContext)()
+    if (ctx.state === 'suspended') ctx.resume()
     const notes = [523.25, 659.25, 783.99, 1046.5]
     notes.forEach((freq, i) => {
       const osc = ctx.createOscillator()

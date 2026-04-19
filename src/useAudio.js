@@ -1,5 +1,18 @@
 import { useRef, useCallback, useState } from 'react'
 
+// ── Shared AudioContext — primed inside a user gesture so it's never blocked ─
+let _sharedCtx = null
+
+export function unlockAudioContext() {
+  if (!_sharedCtx) {
+    _sharedCtx = new (window.AudioContext || window.webkitAudioContext)()
+  }
+  if (_sharedCtx.state === 'suspended') _sharedCtx.resume()
+  return _sharedCtx
+}
+
+export function getAudioContext() { return _sharedCtx }
+
 // ── Real MP3 file mapping ────────────────────────────────────────────────────
 const SOUND_FILES = {
   jazz:       '/music/softcafejazz.mp3',

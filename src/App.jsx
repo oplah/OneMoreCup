@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useAudio } from './useAudio'
+import { useAudio, unlockAudioContext } from './useAudio'
 import Landing from './Landing'
 import Menu from './Menu'
 import TimerScreen from './TimerScreen'
@@ -20,6 +20,7 @@ export default function App() {
 
   // Called directly from the "place order" click → inside user gesture
   const handleOrder = () => {
+    unlockAudioContext() // prime shared ctx so completion chime is never blocked
     startAudio(selectedSnack)
     setScreen('timer')
   }
