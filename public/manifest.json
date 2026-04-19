@@ -1,0 +1,17 @@
+{
+  "name": "Still Brewing — Focus Timer",
+  "short_name": "Still Brewing",
+  "description": "Hand-crafted focus sessions, one cup at a time.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F0E8",
+  "theme_color": "#F5F0E8",
+  "icons": [
+    {
+      "src": "/hotchocolate.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

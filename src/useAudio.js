@@ -69,7 +69,8 @@ export function useAudio() {
 
     stopped.current = false
     const audio = new Audio(src)
-    audio.volume = muted ? 0 : volume
+    audio.volume = volume
+    audio.muted = muted          // use native muted — reliable on all browsers
     // When the track ends naturally → pause 3–4 s, then replay
     audio.onended = () => { if (!stopped.current) scheduleReplay() }
     audio.play().catch(() => {})
@@ -92,16 +93,16 @@ export function useAudio() {
 
   const setVolume = useCallback((v) => {
     setVolumeState(v)
-    if (audioRef.current) audioRef.current.volume = muted ? 0 : v
-  }, [muted])
+    if (audioRef.current) audioRef.current.volume = v
+  }, [])
 
   const toggleMute = useCallback(() => {
     setMuted(prev => {
       const next = !prev
-      if (audioRef.current) audioRef.current.volume = next ? 0 : volume
+      if (audioRef.current) audioRef.current.muted = next  // native muted prop
       return next
     })
-  }, [volume])
+  }, [])
 
   return { play, stop, volume, setVolume, muted, toggleMute, activeSound }
 }
