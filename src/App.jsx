@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import { useAudio, unlockAudioContext } from './useAudio'
 import Landing from './Landing'
 import Menu from './Menu'
@@ -49,40 +50,43 @@ export default function App() {
   }
 
   return (
-    <div className="app">
-      {screen === 'landing' && (
-        <Landing onEnter={() => setScreen('menu')} />
-      )}
-      {screen === 'menu' && (
-        <Menu
-          selectedDrink={selectedDrink}
-          selectedSnack={selectedSnack}
-          onDrinkSelect={setSelectedDrink}
-          onSnackSelect={setSelectedSnack}
-          onOrder={handleOrder}
-          onHome={() => setScreen('landing')}
-        />
-      )}
-      {screen === 'timer' && (
-        <TimerScreen
-          drink={selectedDrink}
-          snack={selectedSnack}
-          onComplete={handleComplete}
-          onCancel={handleCancel}
-          play={play}
-          stop={stop}
-          muted={muted}
-          toggleMute={toggleMute}
-        />
-      )}
-      {screen === 'complete' && (
-        <Completion
-          drink={selectedDrink}
-          snack={selectedSnack}
-          onOrderAgain={handleOrderAgain}
-          onNewOrder={handleNewOrder}
-        />
-      )}
-    </div>
+    <>
+      <SpeedInsights />
+      <div className="app">
+        {screen === 'landing' && (
+          <Landing onEnter={() => setScreen('menu')} />
+        )}
+        {screen === 'menu' && (
+          <Menu
+            selectedDrink={selectedDrink}
+            selectedSnack={selectedSnack}
+            onDrinkSelect={setSelectedDrink}
+            onSnackSelect={setSelectedSnack}
+            onOrder={handleOrder}
+            onHome={() => setScreen('landing')}
+          />
+        )}
+        {screen === 'timer' && (
+          <TimerScreen
+            drink={selectedDrink}
+            snack={selectedSnack}
+            onComplete={handleComplete}
+            onCancel={handleCancel}
+            play={play}
+            stop={stop}
+            muted={muted}
+            toggleMute={toggleMute}
+          />
+        )}
+        {screen === 'complete' && (
+          <Completion
+            drink={selectedDrink}
+            snack={selectedSnack}
+            onOrderAgain={handleOrderAgain}
+            onNewOrder={handleNewOrder}
+          />
+        )}
+      </div>
+    </>
   )
 }
